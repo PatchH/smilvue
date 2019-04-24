@@ -1,15 +1,24 @@
 <template>
   <div>
     <div class="search-bar">
-      <van-row class="test-row">
-        <van-col span="3">
-          <img :src="locationIcon" width="75%" style="padding:3px">
+      <van-row class="test-row" gutter="10">
+        <van-col span="4">
+          <div>
+            <div>
+              <img :src="locationIcon.scan">
+            </div>
+            <label>扫一扫</label>
+          </div>
         </van-col>
         <van-col span="16">
           <input type="text" class="search-input">
         </van-col>
-        <van-col span="5">
-          <van-button size="mini" class="search-button">查找</van-button>
+        <van-col span="4">
+          <!-- <van-button size="small" class="search-button">查找</van-button> -->
+          <div>
+              <img :src="locationIcon.code">
+            </div>
+            <label>会员码</label>
         </van-col>
       </van-row>
     </div>
@@ -24,7 +33,7 @@
     <!--type bar-->
     <div class="type-bar">
       <div v-for="(cate,index) in catagory" :key="index" style="width:20%">
-        <img v-lazy="cate.image" width="90%">
+        <img v-lazy="cate.image">
         <span v-text="cate.mallCategoryName"></span>
       </div>
     </div>
@@ -56,7 +65,7 @@
       <div class="hot-title">热卖商品</div>
       <div class="hot-goods">
         <van-list>
-          <van-row gutter="20">
+          <van-row gutter="10">
             <van-col span="12" v-for="(good,index) in hotGoods" :key="index">
               <goodsInfo :goodsImage="good.image" :goodsName="good.name" :goodsPrice="good.price"></goodsInfo>
             </van-col>
@@ -64,9 +73,9 @@
         </van-list>
       </div>
     </div>
+    
   </div>
 </template>
-
 <script>
 import axios from "axios";
 import "swiper/dist/css/swiper.css";
@@ -79,7 +88,7 @@ export default {
   data() {
     return {
       msg: "Shopping Mall",
-      locationIcon: require("../../assets/images/location.svg"),
+      locationIcon: {scan:require("../../assets/images/scan.svg"),code:require("../../assets/images/code.svg")},
       bannerPicArray: [
         {
           imageUrl:
@@ -145,44 +154,72 @@ export default {
 
 <style>
 .search-bar {
-  height: 2.2rem;
+  height: 3rem;
   background-color: #e5017d;
-  line-height: 2.2rem;
+  line-height: 3rem;
   overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 .search-input {
+  border-radius: 8px;
   width: 100%;
-  height: 1.3rem;
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  border-bottom: 1px solid #fff;
-  background-color: #e5017d;
+  height: 1.6rem;
+  line-height: 3rem;
+  border: 1px solid #fff;
+  background-color: #fff;
   color: #fff;
+  margin: .7rem 0;
 }
 
 .search-button {
   border-radius: 4px;
-  margin: 0 0.5rem !important;
+  margin: 0.4rem 0.5rem;
+}
+
+.test-row img {
+  width: 50%;
+  margin: .5rem auto .2rem auto;
+  display: block;
+}
+
+.test-row label {
+  width: 100%;
+  height: .4rem;
+  line-height: .4rem;
+  font-size: 0.6rem;
+  font-family: "lucida Grande", Verdana, "Microsoft YaHei";
+  /* margin:0 0.3rem; */
+  text-align: center;
+  display: block;
 }
 
 .swiper-area {
   max-height: 15rem;
   clear: both;
   overflow: hidden;
+  margin-top:3rem;
 }
 
 .type-bar {
   background-color: #fff;
   margin: 0 0.3rem 0.3rem 0.5rem;
   border-radius: 0.3rem;
-  font-size: .5rem;
+  font-size: 0.7rem;
   display: flex;
+  color: #5c5c5c;
   flex-direction: row;
   flex-wrap: nowrap;
+  font-family: "lucida Grande", Verdana, "Microsoft YaHei";
+  text-align: center;
+}
 
-  text-align: center
+.type-bar img {
+  width: 70%;
+  padding: 15% 15% 0 15%;
 }
 
 .recommand-area {
@@ -192,7 +229,7 @@ export default {
 
 .recommand-title {
   border-bottom: 1px solid #eee;
-  font-size: .5rem;
+  font-size: 0.9rem;
   padding: 0.2rem;
   color: #e5017d;
 }
@@ -204,20 +241,21 @@ export default {
 .recommand-item {
   width: 100%;
   border-right: 1px solid #eee;
-  font-size: .4rem;
+  font-size: 0.7rem;
   text-align: center;
+  color: #333;
 }
 
 .hot-area {
   text-align: center;
-  font-size: .5rem;
+  font-size: 0.9rem;
   height: 1.8rem;
   line-height: 1.8rem;
 }
 
 .hot-title {
   text-align: center;
-  font-size: .5rem;
+  font-size: 0.9rem;
   height: 1.8rem;
   line-height: 1.8rem;
   box-shadow: 0px 2px 8px 0 #ddd !important;
@@ -226,5 +264,13 @@ export default {
 
   font-family: "Micorsoft YaHei";
   font-weight: bold;
+}
+
+.hot-goods {
+  padding: 0 10px;
+}
+
+.hot-goods .van-col {
+  padding-top: 10px;
 }
 </style>

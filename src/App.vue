@@ -12,12 +12,12 @@ export default {
 
 <style>
 #app {
-  margin: auto auto;
-  max-width: 608.8px;
-  max-height: 839.2px;
-  overflow: scroll;
-  border: 5px solid black;
-  border-radius: 20px;
+  margin: auto;
+  max-width: 768px;
+  max-height: 1024px;
+  overflow-x: hidden;
+  /* border: 5px solid black;
+  border-radius: 20px; */
 }
 
 ::-webkit-scrollbar {

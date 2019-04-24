@@ -6,7 +6,7 @@ import router from './router'
 import VueLazyLoad from 'vue-lazyload'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
-import { Button, Row, Col, Swipe, SwipeItem, List, Field, NavBar } from 'vant'
+import { Tabbar,TabbarItem,Button, Row, Col, Swipe, SwipeItem, List, Field, NavBar } from 'vant'
 
 Vue.use(Button)
   .use(Row)
@@ -19,6 +19,8 @@ Vue.use(Button)
   }).use(VueAwesomeSwiper).use(List)
   .use(Field)
   .use(NavBar)
+  .use(TabbarItem)
+  .use(Tabbar)
 
 Vue.config.productionTip = false
 

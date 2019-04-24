@@ -67,7 +67,6 @@ export default {
 }
 
 .floor-anormaly div {
-  width: 8rem;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
@@ -90,7 +89,7 @@ export default {
 .floor-rule div {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  width: 8rem;
+  width: 50%;
   border-bottom: 1px solid #ddd;
 }
 
