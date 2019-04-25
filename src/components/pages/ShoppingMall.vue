@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id='shoppingMall'>
     <div class="search-bar">
       <van-row class="test-row" gutter="10">
         <van-col span="4">
@@ -26,14 +26,14 @@
     <div class="swiper-area">
       <van-swipe :autoplay="3000">
         <van-swipe-item v-for="(banner,index) in bannerPicArray" :key="index">
-          <img v-lazy="banner.image" width="100%">
+          <img :src="banner.image" width="100%">
         </van-swipe-item>
       </van-swipe>
     </div>
     <!--type bar-->
     <div class="type-bar">
       <div v-for="(cate,index) in catagory" :key="index" style="width:20%">
-        <img v-lazy="cate.image">
+        <img :src="cate.image">
         <span v-text="cate.mallCategoryName"></span>
       </div>
     </div>
@@ -153,6 +153,10 @@ export default {
 </script>
 
 <style>
+#shoppingMall{
+  padding-bottom: 50px
+}
+
 .search-bar {
   height: 3rem;
   background-color: #e5017d;
@@ -222,6 +226,10 @@ export default {
   padding: 15% 15% 0 15%;
 }
 
+.type-bar span:hover{
+  color: #e5017d
+}
+
 .recommand-area {
   background-color: #fff;
   margin-top: 0.3rem;
@@ -251,6 +259,8 @@ export default {
   font-size: 0.9rem;
   height: 1.8rem;
   line-height: 1.8rem;
+
+  bottom: 50px
 }
 
 .hot-title {
@@ -268,6 +278,7 @@ export default {
 
 .hot-goods {
   padding: 0 10px;
+  padding-bottom: 60px
 }
 
 .hot-goods .van-col {

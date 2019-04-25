@@ -14,8 +14,8 @@ Vue.use(Button)
   .use(Swipe)
   .use(SwipeItem)
   .use(VueLazyLoad, {
-    error: require('../src/assets/images/location.svg'),
-    loading: require('../src/assets/images/location.svg')
+    error: 'http://img.mp.itc.cn/upload/20161115/6163765431c44d538b37d6efb32ee885_th.jpg',
+    loading: 'http://img.mp.itc.cn/upload/20161115/6163765431c44d538b37d6efb32ee885_th.jpg'
   }).use(VueAwesomeSwiper).use(List)
   .use(Field)
   .use(NavBar)

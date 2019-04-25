@@ -44,6 +44,7 @@ export default {
 .van-tabbar {
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
+  background-image:  linear-gradient(to right,#ec9196 0,#e5017d 100%)
   /* background-color:honeydew; */
 }
 
@@ -51,5 +52,9 @@ export default {
   color: #333;
   font-size: 0.7rem;
   font-family: "lucida Grande", Verdana, "Microsoft YaHei";
+}
+
+.van-tabbar-item :hover{
+  font-size: .9rem
 }
 </style>
