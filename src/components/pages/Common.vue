@@ -21,7 +21,7 @@ export default {
 <style scoped>
 .main-div {
   width: 100%;
-  background: url(https://img.alicdn.com/simba/img/TB1n4QrRxnaK1RjSZFBSuwW7VXa.jpg) no-repeat;
+  background: url(http://img.mp.itc.cn/upload/20161115/6163765431c44d538b37d6efb32ee885_th.jpg) no-repeat;
   height: 600px;
   background-position: center 100%;
   background-size: 100% 92%;
